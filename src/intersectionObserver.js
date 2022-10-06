@@ -11,7 +11,7 @@ const getObserverSettings = (settings) => ({
 });
 
 const intersectionHandler = (entries, settings, instance) => {
-  entries.forEach((entry) =>
+  entries.forEach(async (entry) =>
     isIntersecting(entry)
       ? onEnter(entry.target, entry, settings, instance)
       : onExit(entry.target, entry, settings, instance)
@@ -19,7 +19,7 @@ const intersectionHandler = (entries, settings, instance) => {
 };
 
 export const observeElements = (observer, elements) => {
-  elements.forEach((element) => {
+  elements.forEach(async (element) => {
     observer.observe(element);
   });
 };

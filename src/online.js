@@ -5,7 +5,7 @@ import { filterErrorElements, queryElements } from "./dom";
 
 export const retryLazyLoad = (settings, instance) => {
   const errorElements = filterErrorElements(queryElements(settings));
-  errorElements.forEach((element) => {
+  errorElements.forEach(async (element) => {
     removeClass(element, settings.class_error);
     resetStatus(element);
   });
